@@ -1,80 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Time tracking dashboard</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="stylesheet" href="styles/style.css" />
 
-  Report for
-  Jeremy Robson
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body
+    class="bg-custom-Very-dark-blue font-rubik flex min-h-screen items-center justify-center"
+  >
+    <main class="mx-auto my-2 w-9/10 max-w-5xl">
+      <div class="grid gap-8 md:grid-cols-4">
+        <div class="bg-custom-Dark-blue rounded-xl md:row-span-2">
+          <div
+            class="bg-custom-Blue flex items-center space-x-4 rounded-xl p-6 md:block"
+          >
+            <img
+              src="images/image-jeremy.png"
+              alt=""
+              class="size-15 rounded-full ring-2 ring-white"
+            />
+            <div class="md:my-8">
+              <p class="text-custom-Pale-Blue">Report for</p>
+              <h1 class="text-2xl font-thin text-white md:text-4xl">
+                Jeremy Robson
+              </h1>
+            </div>
+          </div>
+          <div
+            class="text-custom-Desaturated-blue flex items-center justify-between p-6 md:block md:space-y-5"
+          >
+            <div
+              class="js-timeframe-select-link cursor-pointer transition-colors duration-75 ease-in hover:text-white"
+              data-timeframe="daily"
+            >
+              Daily
+            </div>
+            <div
+              class="active js-timeframe-select-link cursor-pointer transition-colors duration-75 ease-in hover:text-white"
+              data-timeframe="weekly"
+            >
+              Weekly
+            </div>
+            <div
+              class="js-timeframe-select-link cursor-pointer transition-colors duration-75 ease-in hover:text-white"
+              data-timeframe="monthly"
+            >
+              Monthly
+            </div>
+          </div>
+        </div>
 
-  Daily
-  Weekly
-  Monthly
+        <div class="bg-custom-Light-red relative rounded-xl">
+          <img
+            src="images/icon-work.svg"
+            alt=""
+            class="absolute right-4 z-0 size-15"
+          />
+          <div
+            class="bg-custom-Dark-blue relative z-10 mt-10 cursor-pointer rounded-xl p-6"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-white">Work</h2>
+              <img
+                src="images/icon-ellipsis.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between gap-4 md:my-5 md:block"
+            >
+              <h3 class="text-3xl font-thin text-white md:text-5xl">32hrs</h3>
+              <p class="text-custom-Desaturated-blue md:my-2">
+                Last Week - <span>36hrs</span>
+              </p>
+            </div>
+          </div>
+        </div>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+        <div class="bg-custom-Soft-blue relative rounded-xl">
+          <img
+            src="images/icon-play.svg"
+            alt=""
+            class="absolute right-4 z-0 size-15"
+          />
+          <div
+            class="bg-custom-Dark-blue relative z-10 mt-10 cursor-pointer rounded-xl p-6"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-white">Play</h2>
+              <img
+                src="images/icon-ellipsis.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between gap-4 md:my-5 md:block"
+            >
+              <h3 class="text-3xl font-thin text-white md:text-5xl">10hrs</h3>
+              <p class="text-custom-Desaturated-blue md:my-2">
+                Last Week - <span>8hrs</span>
+              </p>
+            </div>
+          </div>
+        </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+        <div class="bg-custom-Light-study relative rounded-xl">
+          <img
+            src="images/icon-study.svg"
+            alt=""
+            class="absolute right-4 z-0 size-15"
+          />
+          <div
+            class="bg-custom-Dark-blue relative z-10 mt-10 cursor-pointer rounded-xl p-6"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-white">Study</h2>
+              <img
+                src="images/icon-ellipsis.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between gap-4 md:my-5 md:block"
+            >
+              <h3 class="text-3xl font-thin text-white md:text-5xl">4hrs</h3>
+              <p class="text-custom-Desaturated-blue md:my-2">
+                Last Week - <span>7hrs</span>
+              </p>
+            </div>
+          </div>
+        </div>
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+        <div class="bg-custom-Lime-green relative rounded-xl">
+          <img
+            src="images/icon-exercise.svg"
+            alt=""
+            class="absolute right-4 z-0 size-15"
+          />
+          <div
+            class="bg-custom-Dark-blue relative z-10 mt-10 cursor-pointer rounded-xl p-6"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-white">Exercise</h2>
+              <img
+                src="images/icon-ellipsis.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between gap-4 md:my-5 md:block"
+            >
+              <h3 class="text-3xl font-thin text-white md:text-5xl">4hrs</h3>
+              <p class="text-custom-Desaturated-blue md:my-2">
+                Last Week - <span>5hrs</span>
+              </p>
+            </div>
+          </div>
+        </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+        <div class="bg-custom-Violet relative rounded-xl">
+          <img
+            src="images/icon-social.svg"
+            alt=""
+            class="absolute right-4 z-0 size-15"
+          />
+          <div
+            class="bg-custom-Dark-blue relative z-10 mt-10 cursor-pointer rounded-xl p-6"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-white">Social</h2>
+              <img
+                src="images/icon-ellipsis.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between gap-4 md:my-5 md:block"
+            >
+              <h3 class="text-3xl font-thin text-white md:my-2 md:text-5xl">
+                5hrs
+              </h3>
+              <p class="text-custom-Desaturated-blue">
+                Last Week - <span>10hrs</span>
+              </p>
+            </div>
+          </div>
+        </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+        <div class="bg-custom-Soft-orange relative rounded-xl">
+          <img
+            src="images/icon-self-care.svg"
+            alt=""
+            class="absolute right-4 z-0 size-15"
+          />
+          <div
+            class="bg-custom-Dark-blue relative z-10 mt-10 cursor-pointer rounded-xl p-6"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-white">Self Care</h2>
+              <img
+                src="images/icon-ellipsis.svg"
+                alt=""
+                class="cursor-pointer"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between gap-4 md:my-5 md:block"
+            >
+              <h3 class="text-3xl font-thin text-white md:my-2 md:text-5xl">
+                2hrs
+              </h3>
+              <p class="text-custom-Desaturated-blue">
+                Last Week - <span>2hrs</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <script src="script/script.js" type="module"></script>
+  </body>
 </html>
