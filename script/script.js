@@ -1,6 +1,8 @@
 import { getTimeFrame } from "./data.js";
 
-loadData("daily");
+let selctedTimeframe = localStorage.getItem("selectedTimeframe") || "daily";
+
+loadData(selctedTimeframe);
 
 function loadData(selctedTimeframe) {
   let previousTime = "";
@@ -143,8 +145,10 @@ function loadData(selctedTimeframe) {
   document.querySelectorAll(".js-timeframe-select-link").forEach((elem) => {
     elem.addEventListener("click", () => {
       const timeframe = elem.dataset.timeframe;
+      selctedTimeframe = timeframe;
+      localStorage.setItem("selectedTimeframe", selctedTimeframe);
 
-      loadData(timeframe);
+      loadData(selctedTimeframe);
     });
   });
 }
