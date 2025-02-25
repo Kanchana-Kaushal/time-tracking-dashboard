@@ -1,19 +1,18 @@
-import { getTimeFrame, loadData } from "./data.js";
+import { getTimeFrame } from "./data.js";
 
-loadData().then(() => {
-  loadData("daily");
+loadData("daily");
 
-  function loadData(selctedTimeframe) {
-    let previousTime = "";
-    if (selctedTimeframe === "daily") {
-      previousTime = "Yesterday";
-    } else if (selctedTimeframe === "weekly") {
-      previousTime = "Last Week";
-    } else {
-      previousTime = "Last Month";
-    }
+function loadData(selctedTimeframe) {
+  let previousTime = "";
+  if (selctedTimeframe === "daily") {
+    previousTime = "Yesterday";
+  } else if (selctedTimeframe === "weekly") {
+    previousTime = "Last Week";
+  } else {
+    previousTime = "Last Month";
+  }
 
-    let HTML = `<div class="grid gap-8 md:grid-cols-4">
+  let HTML = `<div class="grid gap-8 md:grid-cols-4">
     <div class="bg-custom-Dark-blue rounded-xl md:row-span-2">
       <div
         class="bg-custom-Blue flex items-center space-x-4 rounded-xl p-6 md:block"
@@ -139,14 +138,13 @@ loadData().then(() => {
     </div>
   </div>`;
 
-    document.querySelector(".js-container").innerHTML = HTML;
+  document.querySelector(".js-container").innerHTML = HTML;
 
-    document.querySelectorAll(".js-timeframe-select-link").forEach((elem) => {
-      elem.addEventListener("click", () => {
-        const timeframe = elem.dataset.timeframe;
+  document.querySelectorAll(".js-timeframe-select-link").forEach((elem) => {
+    elem.addEventListener("click", () => {
+      const timeframe = elem.dataset.timeframe;
 
-        loadData(timeframe);
-      });
+      loadData(timeframe);
     });
-  }
-});
+  });
+}
